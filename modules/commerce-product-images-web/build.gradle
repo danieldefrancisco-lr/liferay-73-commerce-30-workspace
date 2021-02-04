@@ -1,0 +1,10 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+
+	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.0.2"
+	
+	compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.api", version: "22.2.4"
+	compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.product.api", version: "29.3.0"
+	compileOnly group: 'com.liferay.commerce', name: 'com.liferay.commerce.product.definitions.web', version: "6.0.21"
+	compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.product.content.api", version: "5.0.5"
+}
