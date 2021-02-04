@@ -1,4 +1,4 @@
-# ${Product Publisher custom Datasource for most frequently wishlisted products}
+# Product Publisher custom Datasource for most frequently wishlisted products
 
 This module adds a new datasource for the Product Publisher widget.
 This datasource queries the database looking for the products with a higher frecuency in all wislishts.
