@@ -1,4 +1,4 @@
-# ${Commerce widgets for demos}
+# Commerce widgets for demos
 
 This workspace contains new osgi modules with different Liferay Commerce extensions.
 
