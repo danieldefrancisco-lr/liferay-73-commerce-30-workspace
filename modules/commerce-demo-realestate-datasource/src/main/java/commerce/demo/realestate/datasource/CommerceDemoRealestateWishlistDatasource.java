@@ -74,17 +74,22 @@ public class CommerceDemoRealestateWishlistDatasource implements CPDataSource {
 		
 		long groupId = _portal.getScopeGroupId(httpServletRequest);
 		List<CPCatalogEntry> cpCatalogEntries = getMostWishedProducts(groupId,_portal.getCompanyId(httpServletRequest),
+				getCommerceAccountId(httpServletRequest),themeDisplay.getLocale(),start,end);
+		int resultsSize = countMostWishedProducts(groupId,_portal.getCompanyId(httpServletRequest),
 				getCommerceAccountId(httpServletRequest),themeDisplay.getLocale());
-		return new CPDataSourceResult(cpCatalogEntries,cpCatalogEntries.size());
+		if (end > CommerceDemoRealestateWishlistDatasourceConstants.MAX_NUMBER_RESULTS) {
+			resultsSize = CommerceDemoRealestateWishlistDatasourceConstants.MAX_NUMBER_RESULTS;
+		}
+		return new CPDataSourceResult(cpCatalogEntries,resultsSize);
 	}
 
 	protected List<CPCatalogEntry> getMostWishedProducts(long groupId, long companyId,
-			long commerceAccountId,Locale locale) 
+			long commerceAccountId,Locale locale, int start, int end) 
 		throws PortalException {
 		
 		DynamicQuery wishlistQuery = createWishListDynamicQuery(groupId, companyId);
 		List<CPCatalogEntry> CPCatalogEntryList = new ArrayList<CPCatalogEntry>();
-		List<Object[]> results = _commerceWishListItemLocalService.dynamicQuery(wishlistQuery,0,CommerceDemoRealestateWishlistDatasourceConstants.MAX_NUMBER_RESULTS);
+		List<Object[]> results = _commerceWishListItemLocalService.dynamicQuery(wishlistQuery,start,end);
 
 		List <Long> cproductIds = new ArrayList<Long>();
 		if (results != null) {
@@ -101,6 +106,15 @@ public class CommerceDemoRealestateWishlistDatasource implements CPDataSource {
 		}	
 		
 		return CPCatalogEntryList;
+	}
+	
+	protected int countMostWishedProducts(long groupId, long companyId,
+			long commerceAccountId,Locale locale) 
+		throws PortalException {
+		
+		DynamicQuery wishlistQuery = createWishListDynamicQuery(groupId, companyId);
+		List<Object[]> results = _commerceWishListItemLocalService.dynamicQuery(wishlistQuery);
+		return results.size();
 	}
 	
 	private long getCommerceAccountId (HttpServletRequest httpServletRequest) 
