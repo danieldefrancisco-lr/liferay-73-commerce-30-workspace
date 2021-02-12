@@ -1,0 +1,5 @@
+Bundle-Name: commerce-demo-warehouse-web
+Bundle-SymbolicName: commerce.demo.warehouse.web
+Bundle-Version: 1.0.0
+Export-Package: commerce.demo.warehouse.web.constants
+Web-ContextPath: /commerce-demo-warehouse-web
