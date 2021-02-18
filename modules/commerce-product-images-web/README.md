@@ -1,4 +1,6 @@
 # Product Images widget for the product detail page
+![Freelancer](product-images-overview.png
+)
 
 This module adds a new portlet to be used in a product details page, together with the Product Details widget
 This widget takes the product images and display them in a carousel. You can place this widget anywhere you want in the page as long as the Product Details widget is also included in the page
