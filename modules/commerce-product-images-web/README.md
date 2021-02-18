@@ -2,8 +2,10 @@
 ![Freelancer](product-images-overview.png
 )
 
-This module adds a new portlet to be used in a product details page, together with the Product Details widget
-This widget takes the product images and display them in a carousel. You can place this widget anywhere you want in the page as long as the Product Details widget is also included in the page
+This module adds a new portlet to be used in a product details page, together with the Product Details widget.
+
+This widget takes the product images and display them in a carousel. You can place this widget anywhere you want in the page as long as the Product Details widget is also included in the page.
+
 It is inspired by Jeff Handa's Carousel Renderer demo asset
 [Jeff Handa's Carousel Renderer demo asset](https://sales.liferay.com/web/library/w/carousel-renderer?redirect=%2Fgroup%2Flibrary%2Fdemo-assets%2F-%2Fcategories%2F234726%3Fp_r_p_resetCur%3Dtrue%26p_r_p_categoryId%3D234726)
 
@@ -41,4 +43,9 @@ or
 `$ blade gw deploy`
 
 Alternatively, you can always copy the JAR files and paste them in the `{liferay-bundle}/deploy` folder.
+
+### To Download the compiled JAR
+
+You can download the JAR from the releases section
+
 
