@@ -112,16 +112,17 @@ public class CommerceDemoWarehouseWebPortlet extends MVCPortlet {
 			double latitude = ParamUtil.get(request, "latitude", 32.9345787);
 			double longitude = ParamUtil.get(request, "longitude", -117.1124716);
 
-		if (latitude == Double.MAX_VALUE || longitude == Double.MAX_VALUE) {
+	//	if (latitude == Double.MAX_VALUE || longitude == Double.MAX_VALUE) {
 			try {
+				System.out.println("URL to get address: " + "http://ip-api.com/json/" + _portal.getHttpServletRequest(request).getRemoteAddr());
 				JSONObject jo = JSONFactoryUtil.createJSONObject(
 						HttpUtil.URLtoString("http://ip-api.com/json/" + _portal.getHttpServletRequest(request).getRemoteAddr()));
 				latitude = jo.getDouble("lat");
 				longitude = jo.getDouble("lon");
 			} catch (Exception e) {
-
+				e.printStackTrace();
 			}
-		}
+	//	}
 			List<CommerceInventoryWarehouse> commerceWarehouses = _commerceWarehouseLocalService
 					.getCommerceInventoryWarehouses(themeDisplay.getCompanyId());
 
@@ -130,19 +131,20 @@ public class CommerceDemoWarehouseWebPortlet extends MVCPortlet {
 				ExpandoBridge expandoBridge = commerceWarehouse.getExpandoBridge();
 				Map<String, Serializable> attributes = expandoBridge.getAttributes();
 				
-				long commercePriceListId = (Long) attributes.get("priceListId");
+				long commercePriceListId = (Long) attributes.get(CommerceDemoWarehouseWebPortletKeys.PRICELISTID_CUSTOMFIELD);
 				String price = getPrice(cpCatalogEntry, commerceContext, commercePriceListId, "price",
 						themeDisplay.getLocale());
 				String promoPrice = getPrice(cpCatalogEntry, commerceContext, commercePriceListId, "promo",
 						themeDisplay.getLocale());
-
+				
 				if (!Validator.isBlank(price)) {
 					CPWarehouses.add(new CPWarehouse(commerceWarehouse, cpCatalogEntry, price, promoPrice,
 							new Double[] { latitude, longitude }, attributes));
 				}
 			}
 		}
-		return ListUtil.sort(CPWarehouses, Comparator.naturalOrder());
+		//return ListUtil.sort(CPWarehouses, Comparator.naturalOrder());
+		return CPWarehouses;
 	}
 
 	protected String getPrice(CPCatalogEntry cpCatalogEntry, CommerceContext commerceContext, long commercePriceListId,

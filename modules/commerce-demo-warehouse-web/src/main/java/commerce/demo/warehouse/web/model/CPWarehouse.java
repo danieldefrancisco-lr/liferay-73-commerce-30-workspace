@@ -35,7 +35,7 @@ public class CPWarehouse implements Comparable<CPWarehouse> {
     @Override
     public int compareTo(CPWarehouse cpWarehouse) {
     	if (getDiscountPrice()!=null && cpWarehouse.getDiscountPrice()!=null) {
-        return Double.compare(Double.valueOf(getDiscountPrice().substring(1)), Double.valueOf(cpWarehouse.getDiscountPrice().substring(1)));
+        return Double.compare(Double.valueOf(getPrice().substring(1)), Double.valueOf(cpWarehouse.getPrice().substring(1)));
     	}
     	else {
     		return 0;

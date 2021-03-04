@@ -39,7 +39,7 @@
 	List<CPWarehouse> cPwarehouses = (List<CPWarehouse>) request.getAttribute("cPwarehouses");
 
 %>
-<c:if test="<%=!cPwarehouses.isEmpty()%>">
+<c:if test="<%= cPwarehouses!=null && !cPwarehouses.isEmpty()%>">
 <div class="commerce-demo-warehouse-web">
 <div class="row">
 	<div class="col-xl-8 commerce-table-container" id="<portlet:namespace />entriesContainer">
@@ -98,8 +98,8 @@
 							</td>
 							<td>
 							<span class="text-truncate">
-							<button c-warehouse-id="<%=cPWarehouse.getWarehouseId()%>" class="btn btn-lg btn-primary taglib-add-to-cart" cp-instance-id="<%=cPWarehouse.getInstanceId()%>" id="<%=cpInstance.getCPInstanceId()%>" name="addToCart" title="Add to Cart" type="submit">
-							<%=LanguageUtil.get(resourceBundle, "add-to-cart")%>
+							 <button c-warehouse-id="<%=cPWarehouse.getWarehouseId()%>" class="btn btn-lg btn-primary taglib-add-to-cart" cp-instance-id="<%=cPWarehouse.getInstanceId()%>" id="<%=cpInstance.getCPInstanceId()%>" name="addToCart" type="submit">
+							 <%=LanguageUtil.get(request, "add-to-cart")%>
 							</button>
 							</span>
 							</td>

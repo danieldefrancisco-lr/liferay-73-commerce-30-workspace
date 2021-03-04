@@ -29,7 +29,6 @@ page import="com.liferay.commerce.product.service.CPInstanceLocalServiceUtil" %>
 page import="com.liferay.commerce.service.CommerceOrderLocalServiceUtil" %><%@
 page import="com.liferay.commerce.inventory.service.CommerceInventoryWarehouseLocalServiceUtil" %><%@
 page import="com.liferay.expando.kernel.model.ExpandoBridge" %><%@
-page import="commerce.demo.warehouse.web.internal.display.context.CommerceInventoryWarehousesDisplayContext" %><%@
 page import="com.liferay.portal.kernel.util.WebKeys" %><%@
 page import="com.liferay.portal.kernel.util.PortalUtil" %><%@
 page import="com.liferay.commerce.product.constants.CPWebKeys" %><%@
