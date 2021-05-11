@@ -7,12 +7,24 @@ Retrofitting parts are necessary for manufacturers when the design of a large as
 
 ## Datasource description
 This module adds a new datasource for the Product Publisher widget.
-This datasource queries the database looking for the retrofitting products for the products already purchased by a given commerce account.
-For example: If an account has bought the Machine A, and there are other products in the catalog like Retrofit Part 1 for Machine A, Retrofit Part 2 for Machine A, etc... this datasource will show those retrofit parts.
+This datasource queries the database looking for the retrofitting parts for the products already purchased by a given commerce account.
 
-In order for this to work, you need to create those product relations using a product relation called "retrofit", for example, editing a product Machine A and in the Product Relations tab add some relations of type "retrofit" with other products of the catalog.
+**For example:** If an account has bought the *Machine A*, and there are other products in the catalog like *Retrofit Part 1 for Machine A*, *Retrofit Part 2 for Machine A*, etc... this datasource will show those retrofit parts.
 
-The module includes what is needed to create this product relation in the System Settings automatically when deploying, but due to this  [bug](https://issues.liferay.com/browse/LPS-101642) , it is not working. Therefore you need to create this Product Relation Type manually in System Settings > Catalog > Product Relations. When this bug is solved, you don't need to create the product relation type manually.
+This datasource is best used in combination with the [My Products Datasource](https://sales.liferay.com/en/web/library/-/my-purchased-products-datasource-for-product-publisher?redirect=%2Fgroup%2Flibrary%2Fdemo-assets%2F-%2Fcategories%2F323650%3Fp_r_p_resetCur%3Dtrue%26p_r_p_categoryId%3D323650) to set up a page like this, where a customer can see their current purchased machines and a list of the available retrofitting parts for their machines:
+
+![Freelancer](retrofit-datasource.png
+)
+
+
+
+In order for this to work, you need to create those product relations using a product relation called *"retrofit"*, for example, editing the product Machine A , and in the Product Relations tab add some relations of type "retrofit" with other products of the catalog.
+
+The module includes what is needed to create automatically the new Product Relation Type in the System Settings when deploying the OSGi module, but due to this  [bug](https://issues.liferay.com/browse/LPS-101642) , this is not working.
+
+Therefore you need to create this Product Relation Type manually in `System Settings > Catalog > Product Relations`  
+
+**When this bug is solved, you won't need to create the product relation type manually.**
 
 
 Developed to run on the following versions of Liferay and/or Commerce: `Liferay DXP 7.3-GA1` or `Liferay DXP 7.3-SP1` with `Commerce 3.0`
