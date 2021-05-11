@@ -1,0 +1,5 @@
+Bundle-Name: commerce-demo-additional-info-checkout-step
+Bundle-SymbolicName: commerce.demo.additional.info.checkout.step
+Bundle-Version: 1.0.0
+Export-Package: commerce.demo.additional.info.checkout.step
+Web-ContextPath: /commerce-demo-additional-info-checkout-step

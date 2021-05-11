@@ -19,13 +19,13 @@
 	 double latitude = ParamUtil.get(request, "latitude", 40.333212837747965);
 	double longitude = ParamUtil.get(request, "longitude", -3.5489682371781845);
 	CommerceContext commerceContext = (CommerceContext)request.getAttribute(CommerceWebKeys.COMMERCE_CONTEXT);
-	CommerceOrder commerceOrder = null;
+	/* CommerceOrder commerceOrder = null;
 	if (commerceContext != null) {
 		 commerceOrder = commerceContext.getCommerceOrder();
 		}
 	if (commerceOrder == null) {
 		commerceOrder = CommerceOrderLocalServiceUtil.addCommerceOrder(themeDisplay.getUserId() , commerceContext.getCommerceChannelGroupId(),  commerceContext.getCommerceAccount().getCommerceAccountId());
-	}
+	} */
 	
 	List<CommerceInventoryWarehouse> commerceWarehouses = 
 		CommerceInventoryWarehouseLocalServiceUtil.getCommerceInventoryWarehouses(themeDisplay.getCompanyId(), true, 
@@ -98,7 +98,7 @@
 							</td>
 							<td>
 							<span class="text-truncate">
-							 <button c-warehouse-id="<%=cPWarehouse.getWarehouseId()%>" class="btn btn-lg btn-primary taglib-add-to-cart" cp-instance-id="<%=cPWarehouse.getInstanceId()%>" id="<%=cpInstance.getCPInstanceId()%>" name="addToCart" type="submit">
+							 <button c-warehouse-id="<%=cPWarehouse.getWarehouseId()%>" class="btn btn-lg btn-primary taglib-add-to-cart" cp-instance-id="<%=cPWarehouse.getInstanceId()%>" id="<%=cpInstance.getCPInstanceId()%>" name="addToCart2" type="submit">
 							 <%=LanguageUtil.get(request, "add-to-cart")%>
 							</button>
 							</span>
@@ -202,7 +202,7 @@
 </div>
 </div>
 
-<aui:script use="aui-base,liferay-notification">
+<%-- <aui:script use="aui-base,liferay-notification">
 	var instance = this;
 	$('button[name="addToCart"]').on(
 		'click',
@@ -264,5 +264,5 @@
 			);
 		}
 	);
-</aui:script>
+</aui:script> --%>
 </c:if>

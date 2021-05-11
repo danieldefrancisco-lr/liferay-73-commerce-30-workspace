@@ -1,0 +1,7 @@
+Bundle-Name: commerce-demo-retrofit-datasource
+Bundle-SymbolicName: commerce.demo.retrofit.datasource
+Bundle-Version: 1.0.0
+Export-Package: commerce.demo.retrofit.datasource
+Liferay-Configuration-Path: /configuration
+Include-Resource: configuration=src/main/resources/configuration
+
