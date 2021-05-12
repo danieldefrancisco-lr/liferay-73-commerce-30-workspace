@@ -32,7 +32,7 @@ Developed to run on the following versions of Liferay and/or Commerce: `Liferay 
 
 ## How to Build and Deploy to Liferay
 
-Follow the steps below to build and deploy or copy the modules from the [releases](../../releases/latest) page to your Liferay's deploy folder.
+Follow the steps below to build and deploy or copy the modules from the [releases](https://github.com/danieldefrancisco-lr/liferay-73-commerce-30-workspace/releases) page to your Liferay's deploy folder.
 
 In order to build or deploy any of these modules you will need to either import this workspace into your IDE and use the gradle plugins of the IDE or  [install Blade CLI](https://help.liferay.com/hc/en-us/articles/360028833852-Installing-Blade-CLI).
 
