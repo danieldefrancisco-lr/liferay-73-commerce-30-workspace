@@ -18,7 +18,7 @@ This datasource is best used in combination with the [My Products Datasource](ht
 
 
 
-In order for this to work, you need to create those product relations using a product relation called *"retrofit"*, for example, editing the product Machine A , and in the Product Relations tab add some relations of type "retrofit" with other products of the catalog.
+In order for this to work, you need to create those product relations using a product relation type called *"retrofit"*. For example, editing the product Machine A , and in the Product Relations tab add some relations of type "retrofit" with other products of the catalog.
 
 The module includes what is needed to create automatically the new Product Relation Type in the System Settings when deploying the OSGi module, but due to this  [bug](https://issues.liferay.com/browse/LPS-101642) , this is not working.
 
