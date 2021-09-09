@@ -10,7 +10,7 @@ Developed to run on the following versions of Liferay and/or Commerce: `Liferay 
 
 ## How to Build and Deploy to Liferay
 
-You will need to build and deploy 3 modules:
+You will need to build and/or deploy 3 modules:
 
 * related-document-info-list-provider
 * [commerce-custom-service-api](https://github.com/danieldefrancisco-lr/liferay-73-commerce-30-workspace/tree/main/modules/commerce-custom-service-api)
