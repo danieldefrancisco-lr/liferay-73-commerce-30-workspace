@@ -16,7 +16,7 @@ You will need to build and/or deploy 3 modules:
 * [commerce-custom-service-api](https://github.com/danieldefrancisco-lr/liferay-73-commerce-30-workspace/tree/main/modules/commerce-custom-service-api)
 * [commerce-custom-service](https://github.com/danieldefrancisco-lr/liferay-73-commerce-30-workspace/tree/main/modules/commerce-custom-service)
 
-Follow the steps below to build and deploy or copy the modules from the [releases](../../releases/latest) page to your Liferay's deploy folder.
+Follow the steps below to build and deploy or copy the modules from the [releases](https://github.com/danieldefrancisco-lr/liferay-73-commerce-30-workspace/releases) page to your Liferay's deploy folder.
 
 In order to build or deploy any of these modules you will need to either import this workspace into your IDE and use the gradle plugins of the IDE or  [install Blade CLI](https://help.liferay.com/hc/en-us/articles/360028833852-Installing-Blade-CLI).
 
