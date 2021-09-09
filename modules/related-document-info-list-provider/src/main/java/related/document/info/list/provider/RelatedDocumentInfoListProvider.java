@@ -95,8 +95,10 @@ public class RelatedDocumentInfoListProvider implements InfoListProvider<AssetEn
 			e.printStackTrace();
 		}
 
-		// return _assetEntryLocalService.getAssetEntries(0, 5);
-		return results.subList(pagination.getStart(), pagination.getEnd());
+		// Crappy pagination management;
+		if (pagination.getEnd()>results.size()) return results;
+		
+		return results.subList(pagination.getStart(), pagination.getEnd()-1);
 	}
 
 	@Override
@@ -124,7 +126,6 @@ public class RelatedDocumentInfoListProvider implements InfoListProvider<AssetEn
 			e.printStackTrace();
 		}
 
-		// return _assetEntryLocalService.getAssetEntries(0, 5);
 		return results.size();
 	}
 
@@ -148,7 +149,7 @@ public class RelatedDocumentInfoListProvider implements InfoListProvider<AssetEn
 	
 	
 	private List<CPCatalogEntry> getPurchasedProductsByAccount() throws PortalException{
-		List<AssetEntry> results = new ArrayList<AssetEntry>();
+
 		ServiceContext serviceContext = ServiceContextThreadLocal.getServiceContext();
 
 		HttpServletRequest httpServletRequest = serviceContext.getRequest();
