@@ -1,0 +1,4 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+	compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.product.api", version: "29.3.0"
+}
